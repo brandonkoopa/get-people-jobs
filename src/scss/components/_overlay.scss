@@ -19,9 +19,17 @@
 
 .game-paused-off {
   @include overlay();
+  background-color: rgba(0, 0, 0, 0);
 
   p {
+    font-family: "Indeed Sans Bold";
     font-size: 32px;
+    top: 20%;
+    transform: none;
+  }
+
+  .game-title {
+    margin-top: 32px;
   }
 }
 
@@ -32,7 +40,7 @@
 
 .game-on-overlay {
   @include overlay();
-  animation: fadeOut 0.5s ease-out;
+  animation: fadeOut 0.5s ease-in;
   pointer-events: none;
   opacity: 0;
 }
@@ -45,7 +53,10 @@
     font-family: "Indeed Sans Bold";
     font-size: 20px;
     background-color: rgba(0,0,0,.75);
+    margin: 0;
     padding: 16px;
+    top: 25%;
+    transform: none;
 
     &.game-over-lbl {
       color: $error-color;

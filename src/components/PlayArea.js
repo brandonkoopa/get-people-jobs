@@ -76,12 +76,15 @@ const PlayArea = props => {
     { gameState === GAME_OFF &&
     <div className="game-paused-off">
       <IndeedLogo/>
-      <p>Get people jobs</p>
+      <p className="game-title">
+        <p>HELP PEOPLE</p>
+        <p>GET JOBS</p>
+      </p>
     </div>
     }
     { gameState === GAME_ON && <div className="game-on-overlay"><p>Go!</p></div> }
     { gameState === GAME_PAUSED && <div className="game-paused-overlay"><p>Paused</p></div> }
-    { gameState === GAME_OVER && <div className="game-over-overlay"><p className="game-over-lbl">GAME OVER</p><p>You got {jobs} jobs for people!</p></div> }
+    { gameState === GAME_OVER && <div className="game-over-overlay"><p className="game-over-lbl">GAME OVER</p><p>You got {jobs} job{jobs === 1 ? '' : 's'} for {jobs === 1 ? 'somebody' : 'people'}!</p></div> }
     <Wave/>
     { gameState !== GAME_OFF && <Spikes/> }
     {

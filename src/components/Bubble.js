@@ -2,14 +2,18 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addJob, addScore } from '../actions';
 import { isOverlapping } from '../lib/common';
+import { GAME_OFF, GAME_ON, GAME_PAUSED, GAME_OVER } from '../constants/GameStates';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHammer, faBriefcase, faBriefcaseMedical, faLaptopCode, faBroom } from "@fortawesome/free-solid-svg-icons";
-library.add(faHammer, faBriefcase, faBriefcaseMedical, faLaptopCode, faBroom);
+import { faHammer, faBriefcase, faBriefcaseMedical, faLaptopCode, faBroom, faWrench, faPhoneAlt, faVideo, faCameraRetro, faWallet, faSchool, faPaintRoller, faUserTie, faCashRegister, faCommentsDollar, faUserNurse, faDollarSign, faCreditCard, faHotel, faHospital, faMarker, faRobot } from "@fortawesome/free-solid-svg-icons";
+library.add(faHammer, faBriefcase, faBriefcaseMedical, faLaptopCode, faBroom, faWrench, faPhoneAlt, faVideo, faCameraRetro, faWallet, faSchool, faPaintRoller, faUserTie, faCashRegister, faCommentsDollar, faUserNurse, faDollarSign, faCreditCard, faHotel, faHospital, faMarker, faRobot);
+const icons = [ 'broom', 'hammer', 'briefcase', 'briefcase-medical', 'laptop-code', 'wrench', 'phone-alt', 'video', 'camera-retro', 'wallet', 'school', 'paint-roller', 'user-tie', 'cash-register', 'comments-dollar', 'user-nurse', 'dollar-sign', 'credit-card', 'hotel', 'hospital', 'marker', 'robot' ];
 
-import { GAME_OFF, GAME_ON, GAME_PAUSED, GAME_OVER } from '../constants/GameStates';
 
-const icons = [ 'broom', 'hammer', 'briefcase', 'briefcase-medical', 'laptop-code' ];
+
+
+
+
 
 const getRandomIcon = () => {
   return icons[Math.floor(Math.random() * icons.length)];
