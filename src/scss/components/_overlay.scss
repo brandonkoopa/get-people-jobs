@@ -1,0 +1,55 @@
+@mixin overlay() {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  top: 0;
+
+  p {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+  }
+}
+
+.game-paused-off {
+  @include overlay();
+
+  p {
+    font-size: 32px;
+  }
+}
+
+.game-paused-overlay {
+  @include overlay();
+  animation: fadeIn 0.15s ease-out;
+}
+
+.game-on-overlay {
+  @include overlay();
+  animation: fadeOut 0.5s ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.game-over-overlay {
+  @include overlay();
+  pointer-events: none;
+
+  p {
+    font-family: "Indeed Sans Bold";
+    font-size: 20px;
+    background-color: rgba(0,0,0,.75);
+    padding: 16px;
+
+    &.game-over-lbl {
+      color: $error-color;
+      font-size: 32px;
+    }
+  }
+}

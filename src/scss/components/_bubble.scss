@@ -1,0 +1,21 @@
+.bubble {
+  animation: appear 0.25s cubic-bezier(.5, 0.05, 1,.5);
+  animation-timing-function: cubic-bezier(.36,.97,.51,1.19);
+  animation-iteration-count: 1;
+  background-image: radial-gradient(ellipse farthest-corner at 1px 1px, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) );
+  border: 1px solid $color-white;
+  border-radius: 50px;
+  cursor: pointer;
+  position: absolute;
+  transition: transform .2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &_icon-container {
+    position: relative;
+    text-align: center;
+    top: 50%;
+  }
+}

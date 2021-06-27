@@ -1,0 +1,18 @@
+.score-lbl {
+  font-size: 12px;
+  padding-right: 32px;
+  margin: 0;
+  user-select: none;
+}
+
+.score-value {
+  font-size: 30px;
+  margin: 0 0 8px;
+  user-select: none;
+
+  &.bounce {
+    animation: appear 0.25s cubic-bezier(.5, 0.05, 1,.5);
+    animation-timing-function: cubic-bezier(.36,.97,.51,1.19);
+    animation-iteration-count: 1;
+  }
+}

@@ -1,0 +1,48 @@
+@mixin btnGameStart() {
+  border-color: $color-white;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  color: $color-white;
+  cursor: pointer;
+  float: right;
+  height: 32px;
+  width: 90px;
+}
+
+.btn-game-start {
+  @include btnGameStart();
+  background-color: $color-green;
+
+  &:hover {
+    background-color: darken($color-green, 5%);
+  }
+}
+
+.btn-game-pause {
+  @include btnGameStart();
+  background-color: $color-red;
+
+  &:hover {
+    background-color: darken($color-red, 5%);
+  }
+}
+
+.btn-game-resume {
+  @include btnGameStart();
+  background-color: $color-green;
+
+  &:hover {
+    background-color: darken($color-green, 5%);
+  }
+
+}
+
+.btn-game-again {
+  @include btnGameStart();
+  background-color: $color-green;
+
+  &:hover {
+    background-color: darken($color-green, 5%);
+  }
+}
