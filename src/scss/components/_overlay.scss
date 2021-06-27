@@ -58,6 +58,10 @@
     top: 25%;
     transform: none;
 
+    &.tally {
+      padding-bottom: 32px;
+    }
+
     &.game-over-lbl {
       color: $error-color;
       font-size: 32px;
