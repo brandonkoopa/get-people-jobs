@@ -1,7 +1,7 @@
 {
-  "name": "get-people-jobs",
+  "name": "help-people-get-jobs",
   "version": "0.1.0",
-  "description": "Get people jobs",
+  "description": "Help people get jobs",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
