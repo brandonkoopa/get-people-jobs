@@ -1,5 +1,5 @@
 {
-  "name": "Get people jobs",
+  "name": "get-people-jobs",
   "version": "0.1.0",
   "description": "Get people jobs",
   "main": "server.js",
