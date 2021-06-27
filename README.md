@@ -12,7 +12,6 @@ My solution to Indeed's code chellenge incorprates everything required for the "
 - Scalability
 - Custom events
 - Following Indeed's design language
-- etc
 
 What this doesn't demonstrate, but what I like to include in other projects:
 - Unit tests via Jest and integration tests via Cypress
