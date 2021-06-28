@@ -9,16 +9,9 @@ import { faHammer, faBriefcase, faBriefcaseMedical, faLaptopCode, faBroom, faWre
 library.add(faHammer, faBriefcase, faBriefcaseMedical, faLaptopCode, faBroom, faWrench, faPhoneAlt, faVideo, faCameraRetro, faWallet, faSchool, faPaintRoller, faUserTie, faCashRegister, faCommentsDollar, faUserNurse, faDollarSign, faCreditCard, faHotel, faHospital, faMarker, faRobot);
 const icons = [ 'broom', 'hammer', 'briefcase', 'briefcase-medical', 'laptop-code', 'wrench', 'phone-alt', 'video', 'camera-retro', 'wallet', 'school', 'paint-roller', 'user-tie', 'cash-register', 'comments-dollar', 'user-nurse', 'dollar-sign', 'credit-card', 'hotel', 'hospital', 'marker', 'robot' ];
 
-
-
-
-
-
-
 const getRandomIcon = () => {
   return icons[Math.floor(Math.random() * icons.length)];
 }
-
 
 const Bubble = props => {
   const [iconString] = useState(getRandomIcon());
