@@ -1,5 +1,9 @@
 .header {
   border-bottom: 1px solid $color-white;
-  font-size: 14px;
+  font-size: 12px;
   padding: 16px;
+
+  @include for-big-desktop-up {
+    font-size: 14px;
+  }
 }

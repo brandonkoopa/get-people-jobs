@@ -5,7 +5,19 @@
 }
 
 .wave {
+  bottom: 0px;
+  padding-bottom: 52%;
+  position: absolute;
   transition: 2s;
+  width: 100%;
+
+  svg {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 
   svg path {
     animation: wave 12s infinite;

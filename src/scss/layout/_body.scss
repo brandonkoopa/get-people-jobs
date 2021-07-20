@@ -2,6 +2,11 @@ body {
   background-color: $page-background-color;
   color: $text-color;
   font-family: "Indeed Sans Regular";
+  font-size: 14px;
   margin: 0;
   overflow: hidden;
+
+  @include for-big-desktop-up {
+    font-size: 64px;
+  }
 }
