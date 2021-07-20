@@ -3,7 +3,7 @@ import React from 'react';
 const Spikes = () => {
   return (
     <div id="spikes" className="spikes">
-    <svg width="645" height="50" viewBox="0 0 645 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="645" height="370" viewBox="0 0 645 1" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.5 0L23.3253 37.5H1.67468L12.5 0Z" fill="#A7272F"/>
 <path d="M33.5 0L44.3253 37.5H22.6747L33.5 0Z" fill="#A7272F"/>
 <path d="M53.5 0L64.3253 37.5H42.6747L53.5 0Z" fill="#A7272F"/>

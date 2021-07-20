@@ -6,4 +6,17 @@
   overflow: hidden;
   right: 0;
   position: absolute;
+
+  bottom: 0px;
+  position: absolute;
+  transition: 2s;
+  width: 100%;
+
+  svg {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }
