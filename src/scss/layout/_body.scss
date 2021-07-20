@@ -5,8 +5,4 @@ body {
   font-size: 14px;
   margin: 0;
   overflow: hidden;
-
-  @include for-big-desktop-up {
-    font-size: 64px;
-  }
 }
