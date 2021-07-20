@@ -1,0 +1,10 @@
+{
+  "app.title": "Help people get\u00a0jobs",
+  "app.go": "Go!",
+  "app.game-over": "Game Over",
+  "app.game-over-tally": "You got {jobs} jobs for people!",
+  "app.score": "score",
+  "app.hi-score": "hi-score",
+  "app.jobs": "jobs",
+  "app.job": "job"
+}

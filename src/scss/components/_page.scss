@@ -1,3 +1,11 @@
 .page {
   background-color: $page-background-color;
+  display: grid;
+  grid-template-areas: ". main .";
+  grid-template-columns: 0 1fr 0;
+  height: 100vh;
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: 1fr 404px 1fr;
+  }
 }

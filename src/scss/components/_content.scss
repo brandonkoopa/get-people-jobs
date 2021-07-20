@@ -2,14 +2,15 @@
   background-color: $game-background-color;
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  grid-area: main;
   height: 100vh;
   overflow: hidden;
+  margin: 0;
 
   @include for-tablet-portrait-up {
     border-radius: 8px;
-    height: calc(100vh - 16px);
-    margin: 8px auto;
-    max-width: 404px;
+    height: calc(100vh - 40px);
+    margin: 20px 0;
+    max-height: 650px;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import { GAME_OFF, GAME_ON, GAME_PAUSED, GAME_OVER } from '../constants/GameStates';
 import { changeGameState, setJobs, setScore } from '../actions';
 import Bubble from './Bubble';
@@ -16,7 +17,7 @@ const getRandomSize = () => {
   return Math.floor(Math.random() * (100 - 10 + 1)) + 10;
 }
 
-const PlayArea = props => {
+const PlayArea = () => {
   const dispatch = useDispatch();
   const gameState = useSelector((state) => state.gameState);
   const score = useSelector((state) => state.score);
@@ -25,33 +26,32 @@ const PlayArea = props => {
   const [bubbles, setBubbles] = React.useState([]);
   let spawnSpeed = 5000 / (speed);
   let bubbleUpdateSpeed = 1000 / (speed * 10); // 10-100 pixels per second.
-  let countForID = 0;
 
-  useInterval(() => {
+  React.useEffect(() => {
     if (gameState === GAME_OFF) {
       setBubbles([]);
       dispatch(setScore(0));
       dispatch(setJobs(0));
     }
-  }, gameState);
-
-  useInterval(() => {
-    if (gameState === GAME_ON) {
-      document.dispatchEvent(new Event('UPDATE_BUBLES'));
-    }
-  }, bubbleUpdateSpeed);
-
-  useInterval(() => {
-    if (gameState === GAME_ON) {
-      addBubble();
-    }
-  }, spawnSpeed);
+  }, [gameState]);
 
   React.useEffect(() => {
     if (score === 0) {
       setBubbles([]);
     }
   }, [score]);
+
+  useInterval(() => {
+    if (gameState === GAME_ON && !document.hidden) {
+      document.dispatchEvent(new Event('UPDATE_BUBLES'));
+    }
+  }, bubbleUpdateSpeed);
+
+  useInterval(() => {
+    if (gameState === GAME_ON && !document.hidden) {
+      addBubble();
+    }
+  }, spawnSpeed);
 
   const gameOver = () => {
     dispatch(changeGameState(GAME_OVER));
@@ -66,7 +66,6 @@ const PlayArea = props => {
   }
 
   const addBubble = () => {
-    countForID += 1;
     const size = getRandomSize();
     const newBubbles = [...bubbles, { id: getNextBubbleId(), x: getRandomBubbleX(size), y: 0, size: size }];
     setBubbles(newBubbles);
@@ -76,15 +75,51 @@ const PlayArea = props => {
     { gameState === GAME_OFF &&
     <div className="game-paused-off">
       <IndeedLogo/>
-      <p className="game-title">
-        <p>HELP PEOPLE</p>
-        <p>GET JOBS</p>
+        <p className="game-title">
+          <FormattedMessage id="app.title"
+            defaultMessage="Help people get jobs"
+            description="Game title"
+          />
+        </p>
+    </div>
+    }
+    { gameState === GAME_ON &&
+    <div className="game-on-overlay">
+      <p>
+        <FormattedMessage id="app.go"
+          defaultMessage="Go!"
+          description="Go"
+        />
       </p>
     </div>
     }
-    { gameState === GAME_ON && <div className="game-on-overlay"><p>Go!</p></div> }
-    { gameState === GAME_PAUSED && <div className="game-paused-overlay"><p>Paused</p></div> }
-    { gameState === GAME_OVER && <div className="game-over-overlay"><p className="game-over-lbl">GAME OVER</p><p className="tally">You got {jobs} job{jobs === 1 ? '' : 's'} for {jobs === 1 ? 'somebody' : 'people'}!</p></div> }
+    { gameState === GAME_PAUSED &&
+    <div className="game-paused-overlay">
+      <p>
+        <FormattedMessage id="app.paused"
+          defaultMessage="Paused"
+          description="Paused"
+        />
+      </p>
+    </div>
+    }
+    { gameState === GAME_OVER &&
+    <div className="game-over-overlay">
+      <p className="game-over-lbl">
+        <FormattedMessage id="app.game-over"
+          defaultMessage="Game Over"
+          description="Game Over"
+        />
+      </p>
+      <p className="tally">
+        <FormattedMessage id="app.game-over-tally"
+          defaultMessage="Game Over"
+          description="Game Over"
+          values={{jobs: jobs}}
+        />
+        </p>
+      </div>
+    }
     <Wave/>
     { gameState !== GAME_OFF && <Spikes/> }
     {

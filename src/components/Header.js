@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import { changeGameState, setSpeed } from '../actions';
 import Col from './Col';
 import Row from './Row';
@@ -38,15 +39,30 @@ const Header = () => {
       <Col flex={1}>
         <Row>
           <Col>
-            <h2 className="score-lbl">SCORE</h2>
+            <h2 className="score-lbl">
+              <FormattedMessage id="app.score"
+                defaultMessage="Score"
+                description="Score"
+              />
+            </h2>
             <h3 id="score-value" className="score-value">{score}</h3>
           </Col>
           <Col>
-            <h2 className="score-lbl">HI-SCORE</h2>
+            <h2 className="score-lbl">
+              <FormattedMessage id="app.hi-score"
+                defaultMessage="hi-score"
+                description="hi-score"
+              />
+            </h2>
             <h3 id="score-value" className="score-value">{hiScore}</h3>
           </Col>
           <Col>
-            <h2 className="score-lbl">JOBS</h2>
+            <h2 className="score-lbl">
+              <FormattedMessage id="app.jobs"
+                defaultMessage="jobs"
+                description="jobs"
+              />
+            </h2>
             <h3 id="score-value" className="score-value">{jobs}</h3>
           </Col>
         </Row>

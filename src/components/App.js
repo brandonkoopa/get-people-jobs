@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import PlayArea from './PlayArea';
 
-const App = props => {
+const App = () => {
   return <div className="page">
     <div className="content">
       <Header/>
